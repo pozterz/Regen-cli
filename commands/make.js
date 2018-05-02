@@ -11,7 +11,6 @@ const paths = require('../paths');
 
 program
   .command('make <name>')
-  .option('--actions <list>', 'Add action items', utils.list, ['verbAction'])
   .action((name, options) => {
     const plural = lowercase(name + 's')
     const fileName = `${lowercase(kebab(plural))}.js`;
