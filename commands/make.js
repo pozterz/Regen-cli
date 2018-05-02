@@ -53,8 +53,9 @@ program
           template(content)({
             types: actionTypes,
             name,
-            plural,
             Name: capitalize(name),
+            plural,
+            Plural: capitalize(plural),
             type: actionType,
           })
        )
@@ -81,8 +82,9 @@ program
         .then(content => Promise.resolve(
           template(content)({
             name,
-            plural,
             Name: capitalize(name),
+            plural,
+            Plural: capitalize(plural),
             actionPath: `${paths.actionDir}/${plural}`,
           })
         ))
@@ -98,8 +100,9 @@ program
         .then(content => Promise.resolve(
           template(content)({
             name,
-            plural,
             Name: capitalize(name),
+            plural,
+            Plural: capitalize(plural),
             actionPath: `${paths.actionDir}/${plural}`,
           })
         ))

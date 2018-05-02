@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class <%= Name %>s extends Component {
+export default class <%= Plural %> extends Component {
 
   render() {
     const { <%= plural %> }  = this.props

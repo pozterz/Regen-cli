@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as <%= plural %>Actions from '../../<%= actionPath %>';
-import <%= Name %>s from './<%=Name%>s'
+import <%= Plural %> from './<%=Plural%>'
 
 const mapStateToProps = (state) => ({
   <%=plural%>: state.<%= plural %>
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => {
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(<%= Name %>s)
+export default connect(mapStateToProps, mapDispatchToProps)(<%= Plural %>)

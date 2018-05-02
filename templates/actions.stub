@@ -7,14 +7,14 @@
 <% }) %>
 
 <% methods.forEach((method, index) => {
-%>const <%= method %><%=name%>ActionTypes = {
+%>const <%= method %><%=Plural%>ActionTypes = {
   request: <%= types[index] %>,
   success: <%= types[index] %>,
   fail: <%= types[index] %>,
 }
 <% }) %>
 <% methods.forEach((method, index) => {
-%>const <%= method %><%=plural%>ActionTypes = {
+%>const <%= method %><%=Name%>ActionTypes = {
   request: <%= type[index] %>,
   success: <%= type[index] %>,
   fail: <%= type[index] %>,
