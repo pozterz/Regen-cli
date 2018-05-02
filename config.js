@@ -1,7 +1,8 @@
 module.exports = {
   root: './',
-  containerDir: 'src/views',
-  actionPath: 'src/redux/actions',
+  src: 'src',
+  containerDir: 'views',
+  actionPath: 'redux/actions',
   templates: './templates',
   actionTemplate: 'actions.stub',
   containerTemplate: 'container.stub',

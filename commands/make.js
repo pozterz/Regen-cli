@@ -18,13 +18,15 @@ program
 
     const containerPath = path.join(
       paths.baseDir,
-      options.parent.root,
+      paths.src,
       paths.containerDir
     );
+
+    console.log(containerPath)
+
     const insertPath = path.join(
+      paths.src,
       paths.actionDir,
-      options.parent.root,
-      options.parent.path
     );
 
     utils.assert(

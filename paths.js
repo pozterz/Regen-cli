@@ -22,6 +22,7 @@ module.exports = {
   rootDir: config.root,
   actionDir: config.actionPath,
   containerDir: config.containerDir,
+  src: config.src,
   baseDir,
   templatesDir,
   actionStub,
