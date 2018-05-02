@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const program = require('commander')
 const version = require('./package.json').version;
-const { prompt } = require('inquirer')
 const chalk = require('chalk')
 const figlet = require('figlet')
 const paths = require('./paths')
