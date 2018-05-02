@@ -13,7 +13,7 @@ program
   .command('make <name>')
   .option('--actions <list>', 'Add action items', utils.list, ['verbAction'])
   .action((name, options) => {
-    const plural = name + 's'
+    const plural = lowercase(name + 's')
     const fileName = `${lowercase(kebab(plural))}.js`;
     const dirName = `${capitalize(plural)}`
 
