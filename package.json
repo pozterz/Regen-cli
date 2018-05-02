@@ -1,0 +1,27 @@
+{
+  "name": "regen-cli",
+  "version": "0.0.1",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "regen": "./index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "chalk": "^2.4.1",
+    "commander": "^2.15.1",
+    "figlet": "^1.2.0",
+    "inquirer": "^5.2.0",
+    "lodash.capitalize": "^4.2.1",
+    "lodash.isfunction": "^3.0.8",
+    "lodash.kebabcase": "^4.0.1",
+    "lodash.snakecase": "^4.0.1",
+    "lodash.template": "^4.2.5",
+    "lodash.tolower": "^4.1.1",
+    "lodash.toupper": "^4.1.1",
+    "lodash.trimend": "^4.4.0",
+    "rcfile": "^1.0.3",
+    "touch": "^3.1.0"
+  }
+}

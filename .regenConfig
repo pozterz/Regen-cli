@@ -1,0 +1,5 @@
+{
+  "root": './',
+  "containerDir": 'src/views',
+  "actionPath": 'src/redux/actions'
+}
