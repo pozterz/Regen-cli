@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import * as TestsActions from '../../src/redux/actions/Tests';
+import * as testsActions from '../../src/redux/actions/tests';
 import Tests from './Tests'
 
 const mapStateToProps = (state) => ({
-  Tests: state.Tests
+  tests: state.tests
 })
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
-      ...TestsActions
+      ...testsActions
     }, dispatch
   )
 }

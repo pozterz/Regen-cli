@@ -8,33 +8,33 @@ export const TEST_UPDATE = 'TEST_UPDATE';
 export const TEST_DELETE = 'TEST_DELETE';
 
 
-const getTestActionTypes = {
+const gettestActionTypes = {
   request: TESTS_ADD,
   success: TESTS_ADD,
   fail: TESTS_ADD,
 }
-const updateTestActionTypes = {
+const updatetestActionTypes = {
   request: TESTS_UPDATE,
   success: TESTS_UPDATE,
   fail: TESTS_UPDATE,
 }
-const deleteTestActionTypes = {
+const deletetestActionTypes = {
   request: TESTS_DELETE,
   success: TESTS_DELETE,
   fail: TESTS_DELETE,
 }
 
-const getTestsActionTypes = {
+const gettestsActionTypes = {
   request: TEST_ADD,
   success: TEST_ADD,
   fail: TEST_ADD,
 }
-const updateTestsActionTypes = {
+const updatetestsActionTypes = {
   request: TEST_UPDATE,
   success: TEST_UPDATE,
   fail: TEST_UPDATE,
 }
-const deleteTestsActionTypes = {
+const deletetestsActionTypes = {
   request: TEST_DELETE,
   success: TEST_DELETE,
   fail: TEST_DELETE,

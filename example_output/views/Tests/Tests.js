@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Tests extends Component {
 
   render() {
-    const { Tests }  = this.props
+    const { tests }  = this.props
     return (
       <div>
         
