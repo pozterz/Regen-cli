@@ -1,3 +1,4 @@
+<% var methods = ['get','update','delete'] %>
 
 <% types.forEach((type, index) => {
 %>export const <%= type %> = '<%= type %>';
@@ -5,18 +6,18 @@
 %>export const <%= t %> = '<%= t %>';
 <% }) %>
 
-<% types.forEach((type, index) => {
-%>const <%= type %>_ActionTypes = {
-  request: <%= type %>,
-  success: <%= type %>,
-  fail: <%= type %>,
+<% methods.forEach((method, index) => {
+%>const <%= method %><%=name%>ActionTypes = {
+  request: <%= types[index] %>,
+  success: <%= types[index] %>,
+  fail: <%= types[index] %>,
 }
 <% }) %>
-<% type.forEach((t, index) => {
-%>const <%= t %>_ActionTypes = {
-  request: <%= t %>,
-  success: <%= t %>,
-  fail: <%= t %>,
+<% methods.forEach((method, index) => {
+%>const <%= method %><%=plural%>ActionTypes = {
+  request: <%= type[index] %>,
+  success: <%= type[index] %>,
+  fail: <%= type[index] %>,
 }
 <% }) %>
 
@@ -45,7 +46,7 @@ export default function (state = initialState, action) {
   }
 }
 
-<% var methods = ['get','update','delete'] %>
+
 <% methods.forEach((method, index) => {
 %>
 export const  <%= method %><%= Name %>Request = () => {
