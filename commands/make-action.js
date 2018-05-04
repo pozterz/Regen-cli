@@ -10,7 +10,7 @@ const utils = require('../utils');
 const paths = require('../paths');
 
 program
-  .command('make <name>')
+  .command('makeaction <name>')
   .action((name, options) => {
     const plural = lowercase(name + 's')
     const fileName = `${lowercase(kebab(plural))}.js`;
@@ -31,7 +31,7 @@ program
 
     utils.assert(
       utils.existsSync(insertPath),
-      '"make" insert path does not exist.'
+      '"makeaction" insert path does not exist.'
     );
 
     utils.info(`Creating state "${name}"...`);
@@ -69,48 +69,4 @@ program
       ))
       .catch(utils.exit);
 
-      // Container
-      utils.info(`Creating container component "${name}" inside "${fileName}"...`);
-
-      utils.exists(`${containerPath}/${dirName}`)
-      .then(() => utils.exit(
-        `State folder with name "${dirName}" already exists.`
-      ))
-      .catch(() => utils.mkdir(`${containerPath}/${dirName}`))
-
-      utils.exists(`${containerPath}/${dirName}/index.js`)
-        .then(() => utils.exit(`Container component "${name}" already exists.`))
-        .catch(() => utils.read(paths.containerStub, 'utf8'))
-        .then(content => Promise.resolve(
-          template(content)({
-            name,
-            Name: capitalize(name),
-            plural,
-            Plural: capitalize(plural),
-            actionPath: `${paths.actionDir}/${plural}`,
-          })
-        ))
-        .then(content => utils.write(`${containerPath}/${dirName}/index.js`, content))
-        .then(() => utils.success(
-          `Container component ${name} successfully created! ==> "${containerPath}/${dirName}/index.js"`
-        ))
-      .catch(utils.exit);
-      
-      utils.exists(`${containerPath}/${dirName}/${capitalize(plural)}.js`)
-        .then(() => utils.exit(`Container component "${capitalize(plural)}" already exists.`))
-        .catch(() => utils.read(paths.componentStub, 'utf8'))
-        .then(content => Promise.resolve(
-          template(content)({
-            name,
-            Name: capitalize(name),
-            plural,
-            Plural: capitalize(plural),
-            actionPath: `${paths.actionDir}/${plural}`,
-          })
-        ))
-        .then(content => utils.write(`${containerPath}/${dirName}/${capitalize(plural)}.js`, content))
-        .then(() => utils.success(
-          `Container component ${name} successfully created! ==> "${containerPath}/${dirName}/${capitalize(plural)}.js"`
-        ))
-      .catch(utils.exit);
   })

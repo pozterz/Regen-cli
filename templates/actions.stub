@@ -1,10 +1,15 @@
-<% var methods = ['get','update','delete'] %>
+<% var methods = ['get','add','update','delete'] %>
 <% var actions = ['REQUEST','SUCCESS','ERROR'] %>
 
 <% types.forEach((type, index) => {
-%>export const <%= type %> = '<%= type %>';
-<% }) %><% type.forEach((t, index) => {
-%>export const <%= t %>_<%=actions[index]%> = '<%= t %>'_<%=actions[index]%>;
+%><% actions.forEach((action, idx) => {
+%>export const <%= type %>_<%=action%> = '<%= type %>_<%=action%>';
+<% }) %>
+<% }) %>
+<% type.forEach((t, index) => {
+%><% actions.forEach((action, idx) => {
+%>export const <%= t %>_<%=action%> = '<%= t %>_<%=action%>';
+<% }) %>
 <% }) %>
 
 <% methods.forEach((method, index) => {
@@ -35,14 +40,18 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     <% types.forEach((type, index) => { %>
-      case <%= type %>_<%=actions[index]%>:
-        return {
-          ...state,
-        }<% }) %><% type.forEach((t, index) => { %>
-      case <%= t %>_<%=actions[index]%>:
+    <% actions.forEach((action, idx) => { %>
+      case <%= type %>_<%=action%>:
         return {
           ...state,
         }<% }) %>
+    <% }) %><% type.forEach((t, index) => { %>
+    <% actions.forEach((action, idx) => { %>
+      case <%= t %>_<%=action%>:
+        return {
+          ...state,
+        }<% }) %>
+      <% }) %>
     default: return state
   }
 }

@@ -26,6 +26,7 @@ program
   .description('redux generator')
 
   require('./commands/make')
+  require('./commands/make-action')
 
 program.parse(process.argv)
 
