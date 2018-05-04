@@ -14,16 +14,16 @@
 
 <% methods.forEach((method, index) => {
 %>const <%= method %><%=Plural%>ActionTypes = {
-  request: <%= types[index] %>_<%=actions[index]%>,
-  success: <%= types[index] %>_<%=actions[index]%>,
-  fail: <%= types[index] %>_<%=actions[index]%>,
+  request: <%= types[index] %>_<%=actions[0]%>,
+  success: <%= types[index] %>_<%=actions[1]%>,
+  fail: <%= types[index] %>_<%=actions[2]%>,
 }
 <% }) %>
 <% methods.forEach((method, index) => {
 %>const <%= method %><%=Name%>ActionTypes = {
-  request: <%= type[index] %>_<%=actions[index]%>,
-  success: <%= type[index] %>_<%=actions[index]%>,
-  fail: <%= type[index] %>_<%=actions[index]%>,
+  request: <%= type[index] %>_<%=actions[0]%>,
+  success: <%= type[index] %>_<%=actions[1]%>,
+  fail: <%= type[index] %>_<%=actions[2]%>,
 }
 <% }) %>
 
